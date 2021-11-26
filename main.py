@@ -3,10 +3,11 @@ import subprocess
 import os
 
 
-converter = os.path.join(os.path.dirname(os.path.normpath(__file__)), "ffmpeg", "bin", "ffmpeg.exe")
+folder = os.path.dirname(os.path.normpath(__file__))
+converter = os.path.join(folder, "ffmpeg", "bin", "ffmpeg.exe")
 
-path_mp3 = os.path.join(os.path.dirname(os.path.normpath(__file__)), "input.mp3")
-path_wav = os.path.join(os.path.dirname(os.path.normpath(__file__)), "audio.wav")
+path_mp3 = os.path.join(folder, "input.mp3")
+path_wav = os.path.join(folder, "audio.wav")
 
 if os.path.exists(path_wav):
     os.unlink(path_wav)
@@ -26,5 +27,5 @@ except sr.UnknownValueError:
 print(txt)
 
 # save as text.txt
-with open(os.path.join(os.path.dirname(os.path.normpath(__file__)), "text.txt"), mode="w", encoding="utf-8") as file:
+with open(os.path.join(folder, "text.txt"), mode="w", encoding="utf-8") as file:
     file.write(txt)
