@@ -5,7 +5,7 @@ import os
 
 converter = os.path.join(os.path.dirname(os.path.normpath(__file__)), "ffmpeg", "bin", "ffmpeg.exe")
 
-path_mp3 = r"D:\Python\audio\mp3_to_text\input.mp3"
+path_mp3 = os.path.join(os.path.dirname(os.path.normpath(__file__)), "input.mp3")
 path_wav = os.path.join(os.path.dirname(os.path.normpath(__file__)), "audio.wav")
 
 if os.path.exists(path_wav):
